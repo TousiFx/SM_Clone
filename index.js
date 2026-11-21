@@ -43,6 +43,9 @@ app.delete("/clone/:id", async (req, res) => {
   await User.findByIdAndDelete(id);
   res.redirect("/clone");
 });
+app.get("/clone/new", (req, res) => {
+  res.render("new");
+});
 
 app.listen(8080, () => {
   console.log("port is listing to 8080");

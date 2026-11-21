@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Chat</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+      }
+
+      body {
+        background-color: #f0f2f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #1c1e21;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      form {
+        background-color: #ffffff;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ccd0d5;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+
+      input[type="text"]:focus,
+      textarea:focus {
+        border-color: #0084ff;
+        box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.15);
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      button {
+        background-color: #0084ff;
+        color: #ffffff;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background-color: #0073e6;
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sent Message</h1>
+    <form action="/clone" method="post">
+      <input type="text" name="from" placeholder="Sender" />
+      <textarea name="msg" placeholder="Type....."></textarea>
+      <input type="text" name="from" placeholder="Receiver" />
+      <button>Send</button>
+    </form>
+  </body>
+</html>
