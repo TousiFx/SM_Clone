@@ -14,7 +14,7 @@ body {
   color: #1c1e21;
   max-width: 600px;
   margin: 30px auto;
-  padding: 0 16px;
+  padding: 0 16px 80px 16px; /* Added bottom padding so the fixed button doesn't cover the last card */
 }
 
 /* App Header */
@@ -29,7 +29,7 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Individual Chat Card (your <div> inside the loop) */
+/* Individual Chat Card */
 div {
   background-color: #ffffff;
   padding: 18px 20px 14px 20px;
@@ -39,7 +39,7 @@ div {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-/* Sender & Receiver Info (1st and 3rd <p> inside div) */
+/* Sender & Receiver Info */
 div p {
   font-size: 13px;
   color: #54656f;
@@ -53,7 +53,7 @@ div p:last-child {
   font-style: italic;
 }
 
-/* Message Bubble (2nd <p> inside div) */
+/* Message Bubble */
 div p:nth-of-type(2) {
   background-color: #dcf8c6;
   color: #111b21;
@@ -74,7 +74,7 @@ div + form + form {
   margin-bottom: 20px;
 }
 
-/* Edit Button (1st form after div) */
+/* Edit Button */
 div + form button {
   background-color: #0084ff;
   color: #ffffff;
@@ -86,7 +86,7 @@ div + form button:hover {
   background-color: #006edb;
 }
 
-/* Delete Button (2nd form after div) */
+/* Delete Button */
 div + form + form button {
   background-color: #ef4444;
   color: #ffffff;
@@ -112,4 +112,25 @@ button {
 
 button:active {
   transform: scale(0.96);
+}
+
+/* Fixed Bottom-Right Add Button */
+.add-form {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+
+.add-form button {
+  background-color: #25d366;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.add-form button:hover {
+  background-color: #1ebe5d;
 }

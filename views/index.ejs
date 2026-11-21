@@ -10,20 +10,25 @@
 
 <body>
   <h1>Clone App</h1>
-  <%for(let user of users){%>
+
+  <% for(let user of users) { %>
   <div>
-    <p>from: <%=user.from%></p>
-    <p>message:<%=user.msg%></p>
-    <p>to:<%=user.to%></p>
+    <p>from: <%= user.from %></p>
+    <p>message: <%= user.msg %></p>
+    <p>to: <%= user.to %></p>
   </div>
-  <form action="/clone/<%=user._id%>/edit">
+  <form action="/clone/<%= user._id %>/edit">
     <button>Edit</button>
   </form>
   <form method="POST" action="/clone/<%= user._id %>?_method=DELETE">
     <button>Del</button>
   </form>
-  <%}%>
-   
+  <% } %>
+
+  <!-- Moved outside the loop and given a class -->
+  <form class="add-form" action="/clone/new">
+    <button>+ Add</button>
+  </form>
 </body>
 
 </html>
