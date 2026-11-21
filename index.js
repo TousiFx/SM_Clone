@@ -46,6 +46,23 @@ app.delete("/clone/:id", async (req, res) => {
 app.get("/clone/new", (req, res) => {
   res.render("new");
 });
+app.post("/clone", (req, res) => {
+  let { from, to, msg } = req.body;
+  const newChat = new User({
+    from: from,
+    to: to,
+    msg: msg,
+  });
+  newChat
+    .save()
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  res.redirect("/clone");
+});
 
 app.listen(8080, () => {
   console.log("port is listing to 8080");
