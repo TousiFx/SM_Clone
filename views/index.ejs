@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Msgliy</title>
+  <link rel="stylesheet" href="index_page.css" />
+</head>
+
+<body>
+  <h1>Clone App</h1>
+  <%for(let user of users){%>
+  <div>
+    <p>from: <%=user.from%></p>
+    <p>message:<%=user.msg%></p>
+    <p>to:<%=user.to%></p>
+  </div>
+  <form action="/clone/<%=user._id%>/edit">
+    <button>Edit</button>
+  </form>
+  <form method="POST" action="/clone/<%= user._id %>?_method=DELETE">
+    <button>Del</button>
+  </form>
+  <%}%>
+   
+</body>
+
+</html>
